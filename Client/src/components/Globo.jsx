@@ -24,7 +24,29 @@ function Globo() {
         />
       </Sphere>
 
-      {/* Linha de Longitude */}
+      {/* Linha de Longitude (dividindo em hemisfério Leste/Oeste) */}
+      <Line
+        points={[
+          [0, -1, 0], // Ponto inicial (sul)
+          [0, 1, 0], // Ponto final (norte)
+        ]}
+        color="cyan"
+        lineWidth={1}
+        visible={false} // Linha oculta para o usuário
+      />
+
+      {/* Linha de Latitude (dividindo em hemisfério Norte/Sul) */}
+      <Line
+        points={[
+          [-1, 0, 0], // Ponto inicial (oeste)
+          [1, 0, 0], // Ponto final (leste)
+        ]}
+        color="cyan"
+        lineWidth={1}
+        visible={false} // Linha oculta para o usuário
+      />
+
+      {/* Linha de Longitude (dividindo o globo no eixo Y em 180°) */}
       {Array.from({ length: 36 }).map((_, i) => {
         const angle = MathUtils.degToRad((i * 10) - 180); // Definir ângulos de cada linha de longitude
         return (
@@ -36,6 +58,7 @@ function Globo() {
             ]}
             color="cyan"
             lineWidth={1}
+            visible={false} // Linha oculta para o usuário
           />
         );
       })}
@@ -52,6 +75,7 @@ function Globo() {
             ]}
             color="cyan"
             lineWidth={1}
+            visible={false} // Linha oculta para o usuário
           />
         );
       })}

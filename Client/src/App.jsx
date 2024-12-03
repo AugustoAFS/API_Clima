@@ -9,7 +9,6 @@ import { OrbitControls } from '@react-three/drei'; // Controle de rotação
 function App() {
   return (
     <div className="App">
-      <h1>Globo 3D Interativo</h1>
       <Canvas camera={{ position: [0, 0, 3] }}>
         {/* Luzes */}
         <Luzes />
