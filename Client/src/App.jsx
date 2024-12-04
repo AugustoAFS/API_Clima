@@ -4,7 +4,7 @@ import './css/App.css';
 import { Canvas } from '@react-three/fiber';
 import Globo from './components/Globo';
 import Luzes from './components/Luzes';
-import { OrbitControls } from '@react-three/drei'; // Controle de rotação
+import { OrbitControls } from '@react-three/drei';
 
 function App() {
   return (
