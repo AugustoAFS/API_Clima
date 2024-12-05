@@ -1,28 +1,24 @@
 import React, { useRef } from 'react';
-import { Sphere } from '@react-three/drei';
-import { Line } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
-import { MathUtils } from 'three';
+import { useLoader, useFrame } from '@react-three/fiber';
+import * as THREE from 'three';
+import earthMapDay from '../assets/earth_map_day.jpg';
+import earthMapNight from '../assets/earth_map_night.jpg';
 
-function Globo() {
+function Globo({ isDay }) {
+  const texture = useLoader(THREE.TextureLoader, isDay ? earthMapDay : earthMapNight);
   const globeRef = useRef();
 
   useFrame(() => {
     if (globeRef.current) {
-      globeRef.current.rotation.y += 0.001;
+      globeRef.current.rotation.y += 0.001; // Velocidade da rotação
     }
   });
 
   return (
-    <>
-      {/* Globo */}
-      <Sphere ref={globeRef} args={[1, 32, 32]} position={[0, 0, 0]}>
-        <meshStandardMaterial
-          color="#4E74C2"
-          wireframe={true}
-        />
-      </Sphere>
-    </>
+    <mesh ref={globeRef}>
+      <sphereGeometry args={[1, 32, 32]} />
+      <meshStandardMaterial map={texture} />
+    </mesh>
   );
 }
 
