@@ -1,0 +1,83 @@
+/* src/components/Card.css */
+
+.card {
+    background-color: rgba(0, 0, 255, 0.7); /* Fundo azul semitransparente */
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  .card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .card .card-title {
+    font-size: 1.2rem;
+  }
+  
+  .card .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card img {
+    width: 50px; /* Tamanho da imagem da bandeira */
+    margin-bottom: 10px;
+  }
+  
+  .card .card-description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .card .card-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .card .card-data span {
+    font-size: 1rem;
+  }
+  
+  .card .card-data .temp {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .card .card-data .icon {
+    margin-top: 10px;
+  }
+  
+  .card input[type='text'] {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 200px;
+    margin-bottom: 10px;
+  }
+  
+  .card input[type='submit'] {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4e74c2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .card input[type='submit']:hover {
+    background-color: #3a5e92;
+  }
+  

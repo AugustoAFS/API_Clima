@@ -10,7 +10,7 @@ function Globo({ isDay }) {
 
   useFrame(() => {
     if (globeRef.current) {
-      globeRef.current.rotation.y += 0.001; // Velocidade da rotação
+      globeRef.current.rotation.y += 0.001;
     }
   });
 
