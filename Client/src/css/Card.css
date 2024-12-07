@@ -6,6 +6,14 @@
   color: white;
   text-align: center;
   flex-shrink: 0;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+/* Efeito de hover nos cards */
+.card:hover {
+  transform: scale(1.05);
 }
 
 /* Estilos internos do card */
@@ -56,6 +64,7 @@
   margin-top: 10px;
 }
 
+/* Estilos para o input de texto */
 .card input[type='text'] {
   padding: 10px;
   font-size: 1rem;
@@ -66,6 +75,7 @@
   margin-bottom: 10px;
 }
 
+/* Estilo do botão de submit */
 .card input[type='submit'] {
   padding: 10px 20px;
   font-size: 1rem;
@@ -78,18 +88,4 @@
 
 .card input[type='submit']:hover {
   background-color: #3a5e92;
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-  .content {
-    flex-direction: column; /* Empilha o card e o globo verticalmente */
-    align-items: center; /* Alinha o conteúdo ao centro */
-  }
-
-  .card {
-    width: 100%; /* O card ocupa toda a largura em telas pequenas */
-    max-width: 400px; /* Limita o tamanho máximo do card */
-    margin-bottom: 20px; /* Espaço entre o card e o globo */
-  }
 }

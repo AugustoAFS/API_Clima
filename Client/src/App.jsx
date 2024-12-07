@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './css/App.css';
 import './css/index.css';
-import './css/card.css';
+import './css/Card.css';
 import { Canvas } from '@react-three/fiber';
 import Globo from './globo/Globo';
 import Luzes from './globo/Luzes';
 import Card from './components/Card';
-import ImgDay from './assets/icon/lua-crescente.png';
-import ImgNigth from './assets/icon/brilho-do-sol.png';
+import ToggleButton from './components/ToggleButton';
 import { OrbitControls } from '@react-three/drei';
 
 function App() {
@@ -17,38 +16,29 @@ function App() {
     setIsDay(!isDay);
   };
 
+  useEffect(() => {
+    document.body.className = isDay ? 'day-theme' : 'night-theme';
+  }, [isDay]);
+
   return (
     <div className="App">
-      <div className='content'>
-        <h1 className='Titulo'>API CLIMA</h1>
-
-        <button onClick={toggleImage} className='Button_day_nigth'> 
-          Alternar para {isDay ? 'Noite' : 'Dia'}
-          <img
-            src={isDay ? ImgDay : ImgNigth}
-            alt={isDay ? "Modo Escuro" : "Modo Claro"}
-            className="Button_icon" 
-          />
-        </button>
-
-      </div>
-
-      {/* Card com informações */}
-      <Card />
-
-      {/* Canvas do Three.js com Globo */}
-      <Canvas 
-        camera={{    
-          position: [0, 0, 3],
-          fov: 75,
-          near: 0.1,
-          far: 100,
-        }} 
-      >
-        <Luzes isDay={isDay} />
-        <Globo isDay={isDay} />
-        <OrbitControls />
-      </Canvas>
+      <h1 className="titulo">API CLIMA</h1>
+      <ToggleButton isDay={isDay} onToggle={toggleImage} />
+        <div className="content">
+            <Card />
+            <Canvas
+              camera={{
+                position: [0, 0, 3],
+                fov: 75,
+                near: 0.1,
+                far: 100,
+              }}
+            >
+              <Luzes isDay={isDay} />
+              <Globo isDay={isDay} />
+              <OrbitControls />
+            </Canvas>
+        </div>
     </div>
   );
 }

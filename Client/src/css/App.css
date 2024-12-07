@@ -1,30 +1,38 @@
 #root {
-  margin: 0 auto;
   text-align: center;
+  align-items: center;
 }
 
 .App {
   display: flex;
-  flex-direction: row; /* Mantém os itens lado a lado */
-  justify-content: center; /* Alinha os itens no centro da tela */
-  align-items: center; /* Alinha verticalmente no centro */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   padding: 20px;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-align: center;
 }
-
-canvas {
-  width: 50vw;
-  height: 50vw;
-  margin-right: 20px;
-  border-radius: 50%;
-}
-
 
 .content {
   display: flex;
-  align-items: flex-start; /* Alinha o card no topo */
-  justify-content: center;
-  max-width: 40vw; /* Limita a largura do card a 40% da tela */
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 100px;
   padding: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
+canvas {
+  width: 70vw; /* Ocupa 50% da largura da viewport */
+  height: auto; /* Mantém a proporção */
+  max-width: 1000px; /* Limita o tamanho máximo */
+  max-height: 1000px; /* Limita a altura máxima */
+  object-fit: cover; /* Ajusta o conteúdo do canvas */
+  display: block; /* Remove espaços extras */
+  margin: 0 auto; /* Centraliza o canvas horizontalmente */
+}
