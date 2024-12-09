@@ -1,91 +1,120 @@
+/* Estilos Gerais */
 .card {
-  background-color: rgba(0, 0, 255, 0.7);
-  border-radius: 15px;
+  background-color: #0062ff;
+  border-radius: 10px;
   padding: 20px;
-  width: 300px;
+  width: 100%;
+  max-width: 400px;
   color: white;
-  text-align: center;
-  flex-shrink: 0;
-  margin: 10px;
+  margin: 20px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  text-align: center;
 }
 
-/* Efeito de hover nos cards */
-.card:hover {
-  transform: scale(1.05);
-}
-
-/* Estilos internos do card */
 .card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-.card .card-title {
-  font-size: 1.2rem;
-}
-
-.card .card-content {
+/* Ajuste no container do input para colocar o botão à direita */
+.input-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: center; /* Alinha os itens verticalmente */
+  position: relative;
+  width: 100%; /* Garantir que o container ocupe toda a largura */
 }
 
-.card img {
-  width: 50px;
-  margin-bottom: 10px;
-}
-
-.card .card-description {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-.card .card-data {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.2rem;
-}
-
-.card .card-data span {
-  font-size: 1rem;
-}
-
-.card .card-data .temp {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.card .card-data .icon {
-  margin-top: 10px;
-}
-
-/* Estilos para o input de texto */
-.card input[type='text'] {
-  padding: 10px;
-  font-size: 1rem;
-  border: none;
+.input-container input {
+  flex: 1; /* Faz o input ocupar o máximo de espaço disponível */
+  height: 50px;
+  padding: 0 10px;
+  border: 2px solid #ffffff;
+  background-color: transparent;
   border-radius: 5px;
-  margin-top: 10px;
-  width: 200px;
-  margin-bottom: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
-/* Estilo do botão de submit */
-.card input[type='submit'] {
-  padding: 10px 20px;
+.input-container input:focus {
+  border-color: #00ff2f;
+}
+
+.input-container input:focus ~ label,
+.input-container input:not(:placeholder-shown) ~ label {
+  font-size: 0.8rem;
+  top: 0;
+  background-color: #0062ff;
+  color: #00ff2f;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+.input-container label {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 1rem;
-  background-color: #4e74c2;
-  color: white;
+  color: #ffffff;
+  background-color: transparent;
+  padding: 0 5px;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+/* Estilo para o botão de pesquisa */
+.input-container button {
+  background-color: #007bff;
   border: none;
+  padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px; /* Espaçamento entre o input e o botão */
 }
 
-.card input[type='submit']:hover {
-  background-color: #3a5e92;
+.input-container button img {
+  width: 20px;
+  height: 20px;
+}
+
+.input-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Exibição do Clima */
+#weather-data {
+  margin-top: 20px;
+  text-align: left;
+}
+
+#weather-data h2 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#description-details {
+  margin-top: 10px;
+}
+
+#description-details p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+#details-container {
+  margin-top: 20px;
+}
+
+#details-container p {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+#details-container p i {
+  margin-right: 10px;
 }
